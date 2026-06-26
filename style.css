@@ -1,0 +1,315 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  color: #1f2933;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  width: min(1000px, calc(100% - 24px));
+  margin: 24px auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.header h1 {
+  margin: 0 0 4px;
+  font-size: 28px;
+}
+
+.header p {
+  margin: 0;
+  color: #64748b;
+}
+
+.controls,
+.summary,
+.task-card,
+.empty-state {
+  background: #ffffff;
+  border: 1px solid #d8dee6;
+  border-radius: 6px;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 180px 180px;
+  gap: 10px;
+  padding: 14px;
+}
+
+.controls input,
+.controls select,
+form input,
+form select,
+form textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 10px;
+  background: #ffffff;
+}
+
+.summary {
+  padding: 12px 14px;
+  margin: 12px 0;
+  color: #475569;
+}
+
+.task-list {
+  display: grid;
+  gap: 12px;
+}
+
+.task-card {
+  padding: 14px;
+  border-left: 5px solid #94a3b8;
+}
+
+.task-card--overdue {
+  border-color: #dc2626;
+  background: #fff7f7;
+}
+
+.task-card__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.task-card h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.task-card p {
+  margin: 10px 0;
+  color: #475569;
+  line-height: 1.4;
+}
+
+.task-actions,
+.badges,
+.form-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.status-todo {
+  background: #e0f2fe;
+  color: #075985;
+}
+
+.status-in-progress {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-done {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-overdue,
+.priority-high {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.priority-medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.priority-low {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.due-date {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.primary-btn,
+.secondary-btn,
+.danger-btn,
+.icon-btn {
+  border: 0;
+  border-radius: 4px;
+  padding: 10px 14px;
+}
+
+.primary-btn {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.secondary-btn {
+  background: #e2e8f0;
+  color: #1f2933;
+}
+
+.danger-btn {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.small-btn {
+  padding: 7px 10px;
+  font-size: 14px;
+}
+
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: #e2e8f0;
+}
+
+.message {
+  display: none;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+}
+
+.message--show {
+  display: block;
+}
+
+.message--error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.message--success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.empty-state {
+  display: none;
+  margin-top: 12px;
+  padding: 32px 14px;
+  text-align: center;
+}
+
+.empty-state h2 {
+  margin: 0 0 8px;
+}
+
+.empty-state p {
+  margin: 0;
+  color: #64748b;
+}
+
+.empty-state--show {
+  display: block;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.55);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal--open {
+  display: flex;
+}
+
+.modal-box {
+  width: min(560px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 18px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+form label {
+  display: block;
+  margin: 12px 0 6px;
+  font-weight: 700;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-actions {
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+@media (max-width: 700px) {
+  .header,
+  .task-card__top {
+    display: block;
+  }
+
+  .header .primary-btn,
+  .task-actions {
+    margin-top: 12px;
+  }
+
+  .controls,
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .app {
+    margin-top: 12px;
+  }
+}

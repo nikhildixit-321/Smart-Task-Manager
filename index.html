@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <!-- ye hai header  -->
+    <header class="header">
+      <div>
+        <h1>Smart Task Manager</h1>
+      </div>
+      <button class="primary-btn" id="addTaskBtn">Add Task</button>
+    </header>
+
+    <section class="message" id="messageBox" aria-live="polite"></section>
+
+<!-- yaha search ka option rahega -->
+
+    <section class="controls">
+      <input type="search" id="searchInput" placeholder="Search by title">
+
+      <select id="statusFilter">
+        <option value="All">All Status</option>
+        <option value="Todo">Todo</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Done">Done</option>
+        <option value="Overdue">Overdue</option>
+      </select>
+
+      <select id="priorityFilter">
+        <option value="All">All Priority</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+    </section>
+
+<!-- yaha task count hoga -->
+
+    <section class="summary">
+      <span id="taskCount">0 tasks</span>
+    </section>
+
+    <section class="task-list" id="taskList"></section>
+
+    <section class="empty-state" id="emptyState">
+      <h2>No tasks found</h2>
+      <p>Add a task or change filters.</p>
+    </section>
+  </main>
+
+  <div class="modal" id="taskModal" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <h2 id="modalTitle">Add Task</h2>
+        <button class="icon-btn" id="closeModalBtn" type="button" aria-label="Close">x</button>
+      </div>
+
+      <form id="taskForm">
+        <input type="hidden" id="taskId">
+
+        <label for="titleInput">Title</label>
+        <input type="text" id="titleInput" maxlength="80" required>
+
+        <label for="descriptionInput">Description</label>
+        <textarea id="descriptionInput" rows="4" maxlength="400"></textarea>
+
+        <div class="form-row">
+          <div>
+            <label for="statusInput">Status</label>
+            <select id="statusInput" required>
+              <option value="Todo">Todo</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Done">Done</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="priorityInput">Priority</label>
+            <select id="priorityInput" required>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="dueDateInput">Due Date</label>
+        <input type="date" id="dueDateInput" required>
+
+        <div class="form-actions">
+          <button class="secondary-btn" id="cancelBtn" type="button">Cancel</button>
+          <button class="primary-btn" type="submit">Save Task</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="utils.js"></script>
+  <script src="tasks.js"></script>
+  <script src="ui.js"></script>
+</body>
+</html>
