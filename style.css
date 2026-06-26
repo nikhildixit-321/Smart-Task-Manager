@@ -5,15 +5,15 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f4f6f8;
-  color: #1f2933;
+  background: #dadfe4;
+  color: #335472;
 }
 
 button,
 input,
 select,
 textarea {
-  font: inherit;
+  font: large;
 }
 
 button {
@@ -21,7 +21,8 @@ button {
 }
 
 .app {
-  width: min(1000px, calc(100% - 24px));
+  max-width: 1000px;
+  width: calc(100% - 24px);
   margin: 24px auto;
 }
 
@@ -38,17 +39,14 @@ button {
   font-size: 28px;
 }
 
-.header p {
-  margin: 0;
-  color: #64748b;
-}
+
 
 .controls,
 .summary,
 .task-card,
 .empty-state {
   background: #ffffff;
-  border: 1px solid #d8dee6;
+  border: 1px solid #080809;
   border-radius: 6px;
 }
 
@@ -84,11 +82,11 @@ form textarea {
 
 .task-card {
   padding: 14px;
-  border-left: 5px solid #94a3b8;
+ 
 }
 
 .task-card--overdue {
-  border-color: #dc2626;
+  border-color: #5f1f2c;
   background: #fff7f7;
 }
 
