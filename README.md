@@ -1,20 +1,3 @@
 ﻿# Smart Task Manager
 
-A simple HTML, CSS, and JavaScript task manager.
 
-## Features
-
-- Add, edit, delete, and list tasks
-- localStorage database
-- Status flow validation:
-  - Todo cannot directly become Done
-  - Done tasks cannot move back
-- Computed overdue status without saving Overdue in localStorage
-- Priority sorting using High, Medium, Low order
-- Filter by status and priority
-- Live title search
-- Responsive simple UI
-
-## Run
-
-Open `index.html` in a browser.
